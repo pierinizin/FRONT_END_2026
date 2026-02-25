@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+
+}
+
+body {
+    background-color: #0e76cc;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    background: white;
+    padding: 30px;
+}
+
+main {
+    flex: 1;
+}
+
+.footer-content {
+    
+}
+
+p {
+    margin-left: 100x;
+}
