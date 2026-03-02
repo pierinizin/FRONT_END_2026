@@ -1,84 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
-    <style>
-	.head {	
-		background-color: #333;
-		text-ali: center;
-		color: white;
-	}
-	
-	#contato{
-		background-color: #555;	
-}
+        <title>VPN: Guia Básico</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body> 
+        <main>
+            <div class="cabecalho">
+                <h5>Lista de Perguntas </h5>
+            </div>
+
+            <div class="titulo">
+            <h1>VPN: COMO UTILIZAR</h1>
+            <h3>Material de Estudo</h3>
+            </div>
 
 
-    </style>
-</head>
+    <section class="secao-vpn">
+        <div class="conteudo-centralizado">
+             <h2>O que é uma VPN e por que você deveria usar uma?</h2>
 
-<body>
+             <div class="card-info">
+             <p>Imagine que a internet é uma rodovia pública imensa. Quando você navega normalmente, todos podem ver o seu "carro", de onde você veio e para onde está indo. Uma <strong>VPN (Rede Privada Virtual)</strong> funciona como um túnel exclusivo e blindado construído em volta dessa rodovia. Quando você se conecta a ela, seus dados viajam por dentro desse túnel, ficando invisíveis para bisbilhoteiros, provedores de internet e até hackers.</p>
+             <img src="image_02.jpg" class="img-card">
+             </div>
 
-    <div class="head">
-        <header>
-            <h1>Portfólio do Gabriel</h1>
-            <p>Bem-vindo à minha página</p>
-        </header>
-    </div>
+             <div class="card-info">
+             <p>O segredo da VPN está na <strong>criptografia</strong>. Ela "embaralha" todas as suas informações — como senhas, conversas e dados bancários — de modo que, mesmo que alguém consiga interceptá-los, não conseguirá ler absolutamente nada. Além disso, ela mascara o seu <strong>endereço IP</strong>, que é a sua identidade digital. Isso significa que você pode estar no Brasil, mas, para a internet, parecer que está navegando do Japão ou dos Estados Unidos.</p>
+             <img src="imagem_01.avif" class="img-card">
+             </div>
+            
 
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
+             <div class="card-info">
+             <p>Isso traz três grandes vantagens: primeiro, a <strong>privacidade</strong>, já que ninguém rastreia seu histórico; segundo, a <strong>segurança</strong>, essencial para Wi-Fi públicos; e, por fim, a <strong>liberdade</strong>, permitindo acessar conteúdos que podem estar bloqueados na sua região. No fim das contas, usar uma VPN é garantir que a sua vida digital continue sendo o que deveria ser: privada e segura.</p>
+             <img src="image_03.jpg" class="img-card">
+        </div>
+        <div class="conteudo-centralizado">
 
-    <div id="main">
-        <section id="sobre">
-            <h2>Sobre o Biel</h2>
-            <p>Sou estudante de programação e apaixonado por tecnologia.</p>
-        </section>
+            <h2>Quiz Rápido</h2>
 
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <article>
-                <h3>Projeto 1</h3>
-                <p>Descrição do projeto.</p>
-            </article>
-        </section>
-    </div>
+            <div class="card-info">
+                 <p><strong>1. O que a VPN cria para proteger seus dados?</strong></p>
+                 <input type="radio" name="q1"> Um antivírus potente <br>
+                 <input type="radio" name="q1"> Um túnel invisível e seguro <br>
+                 <input type="radio" name="q1"> Um novo roteador físico
+            </div>
 
-    <section id="contato">
-        <form>
-            <fieldset>
-                <legend>Envie-me uma mensagem</legend>
+            <div class="card-info">
+                <p><strong>2. A criptografia serve para:</strong></p>
+                 <input type="radio" name="q2"> Apagar o histórico <br>
+                 <input type="radio" name="q2"> Deixar a internet gratuita <br>
+                 <input type="radio" name="q2"> Embaralhar os dados
+             </div>
 
-                <label for="nome">Nome</label><br>
-                <input type="text" id="nome" name="nome"><br><br>
+            <div class="card-info">
+             <p><strong>3. Mudar o IP ajuda na:</strong></p>
+             <input type="radio" name="q3"> Privacidade e localização <br>
+             <input type="radio" name="q3"> Limpeza do teclado <br>
+             <input type="radio" name="q3"> Velocidade do download
+            </div>
+            
+            <div class="conteudo-centralizado">
+                <button class="botao-feito">CONCLUÍDO</button>
+            </div>
+        </div>
 
-                <label>Gênero</label><br>
-                <input type="radio" name="genero" value="masculino"> Masculino
-                <input type="radio" name="genero" value="feminino"> Feminino
-                <br><br>
-
-                <label>Interesse</label><br>
-                <input type="checkbox" name="interesse" value="programacao"> Programação
-                <input type="checkbox" name="interesse" value="robotica"> Robótica
-                <br><br>
-
-                <input type="submit" value="Enviar">
-                <button type="button">Botão</button>
-            </fieldset>
-        </form>
+        </div>
     </section>
 
-    <footer>
-        <h4>Feito com dedicação</h4>
-        <h6>By Gabriel Pierini</h6>
-    </footer>
-
-</body>
-
+        <footer>
+            <div class="footer-content">
+            <p>Feito por Gabriel Pierini</p>
+            </div>
+        </footer>  
+    </body>
 </html>
