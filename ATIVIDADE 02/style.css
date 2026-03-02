@@ -2,29 +2,113 @@
     margin: 0px;
     padding: 0px;
     box-sizing: 0px;
-
 }
 
 body {
-    background-color: #0e76cc;
+    background-color: #babec2;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 footer {
-    background: white;
-    padding: 30px;
+    background-color: rgb(149, 145, 163);
+    padding: 1px;
+    text-align: center;
 }
 
 main {
     flex: 1;
 }
 
-.footer-content {
-    
-}
-
 p {
     margin-left: 100x;
+}
+
+.titulo{
+   text-align: center; 
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 30px;
+
+}
+
+.cabecalho{
+    text-align: right;
+    background-color: rgb(149, 145, 163);
+    margin: 0;
+    padding: 1px;
+    font-family: sans-serif;
+}
+.conteudo-centralizado {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 100vh;
+}
+.conteudo-centralizado h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.card-info {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-left: 6px solid #3498db;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.card-info:hover {
+  transform: translateX(10px);
+  background-color: #fff;
+}
+
+.card-info p {
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.card-info strong {
+  color: #3498db;
+}
+.img-card {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+input[type="radio"] {
+    margin-top: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.botao-feito {
+    background-color: rgb(27, 1, 122); 
+    color: white;
+    width: 100%;             
+    padding: 20px;
+    border: none;
+    border-radius: 12px;     
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.botao-feito:hover {
+    background-color: #3498db; 
 }
