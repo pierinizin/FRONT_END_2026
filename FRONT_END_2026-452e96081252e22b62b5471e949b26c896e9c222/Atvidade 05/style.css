@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #312e81, #7c3aed, #db2777);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  gap: 2rem;
+  flex: 1;
+}
+
+#menu-principal {
+  width: 220px;
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+#menu-principal h2 {
+  color: #4ade80;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#menu-principal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-principal li {
+  margin-bottom: 0.75rem;
+}
+
+#menu-principal a {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#menu-principal a:hover {
+  background-color: #22c55e;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #22c55e;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+}
+
+.card {
+  background: rgba(255 255 255 / 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255 255 255 / 0.15);
+  max-width: 400px;
+  margin: 0 auto 3rem auto;
+}
+
+.card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #22c55e;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.card p {
+  margin-bottom: 0.75rem;
+  color: #e5e7eb;
+}
+
+details {
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+details summary {
+  font-weight: 600;
+  color: #22c55e;
+  outline: none;
+}
+
+details p {
+  margin-top: 0.5rem;
+  color: #d1d5db;
+}
+
+blockquote {
+  border-left: 4px solid #22c55e;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #d1d5db;
+  margin: 0.5rem 0 1rem 0;
+}
+
+aside {
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #a7f3d0;
+  margin-top: 1rem;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #22c55e;
+  display: inline-block;
+}
+
+section article {
+  margin-bottom: 1.5rem;
+}
+
+section article h3 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+section article p {
+  margin-bottom: 0.6rem;
+  color: #d1d5db;
+}
+
+section article ul {
+  padding-left: 1.5rem;
+  color: #d1d5db;
+  list-style-type: disc;
+}
+
+code {
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 4px;
+  padding: 0.15rem 0.3rem;
+  font-family: monospace;
+  color: #22c55e;
+  margin-right: 0.3rem;
+}
+
+pre {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: monospace;
+  color: #22c55e;
+  overflow-x: auto;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto 3rem auto;
+  background: rgba(255 255 255 / 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255 255 255 / 0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+fieldset {
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+legend {
+  font-weight: 700;
+  color: #22c55e;
+  font-size: 1.1rem;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #22c55e;
+  background-color: rgba(255 255 255 / 0.15);
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  align-self: flex-start;
+  background-color: #22c55e;
+  color: black;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #16a34a;
+}
+
+footer {
+  background-color: #171717;
+  color: #a7f3d0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer nav {
+  min-width: 180px;
+}
+
+footer p,
+footer address {
+  margin: 0.2rem 0;
+  font-style: normal;
+}

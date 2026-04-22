@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Curiosidades e fatos históricos da Ciência da Computação" />
+  <meta name="author" content="Portal Computação" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+
+  <title>Arquivo Confuso da Computação</title>
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 text-white flex flex-col">
+
+  <!-- Container principal -->
+  <div class="flex flex-1 max-w-7xl mx-auto w-full p-4 gap-6">
+
+    <!-- Menu lateral -->
+    <nav
+      id="menu-principal"
+      class="hidden md:block bg-base-200 rounded-lg w-56 p-4 sticky top-4 h-fit shadow-lg"
+    >
+      <h2 class="text-xl font-bold mb-4 text-center text-green-400">Menu</h2>
+      <ul class="menu menu-compact">
+        <li><a href="#pioneiros" class="hover:bg-green-600 rounded">Pioneiros</a></li>
+        <li><a href="#bugs" class="hover:bg-green-600 rounded">Bugs</a></li>
+        <li><a href="#internet" class="hover:bg-green-600 rounded">Internet</a></li>
+        <li><a href="#linguagens" class="hover:bg-green-600 rounded">Linguagens</a></li>
+        <li><a href="#linha-do-tempo" class="hover:bg-green-600 rounded">Linha do Tempo</a></li>
+        <li><a href="#formulario" class="hover:bg-green-600 rounded">Envie Algo</a></li>
+      </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="flex-1 flex flex-col gap-10">
+
+      <!-- Cabeçalho principal -->
+      <header class="text-center mb-8">
+        <h1 class="text-5xl font-extrabold text-green-400 drop-shadow-lg">
+          Arquivo (Quase) Perdido da Ciência da Computação
+        </h1>
+        <p class="mt-2 text-lg text-gray-300">
+          Uma coletânea caótica de fatos históricos, curiosos e inesperados.
+        </p>
+      </header>
+
+      <!-- Card principal de Pioneiros -->
+      <section
+        id="pioneiros"
+        class="card bg-base-100 shadow-2xl rounded-xl border border-gray-700 max-w-md mx-auto p-6"
+      >
+        <h2 class="card-title text-3xl mb-4 text-green-500 font-bold">Pioneiros Esquecidos</h2>
+
+        <article class="mb-6">
+          <h3 class="card-title text-xl mb-1">Ada Lovelace</h3>
+          <p class="mb-1">Considerada a primeira programadora da história.</p>
+          <details class="bg-base-200 rounded p-2 cursor-pointer">
+            <summary class="font-semibold text-green-600">Ver mais</summary>
+            <p class="mt-1 text-gray-300">
+              Ela escreveu um algoritmo para a Máquina Analítica no século XIX.
+            </p>
+          </details>
+        </article>
+
+        <article class="mb-6">
+          <h3 class="card-title text-xl mb-1">Alan Turing</h3>
+          <p class="mb-2">Criador do conceito de Máquina de Turing.</p>
+          <blockquote
+            class="border-l-4 border-green-500 pl-4 italic text-gray-300"
+            >"Podemos ver apenas um pouco do futuro, mas o suficiente para perceber que há muito a
+            fazer."</blockquote
+          >
+        </article>
+
+        <aside class="bg-base-200 p-3 rounded">
+          <h4 class="card-title text-lg mb-1 text-green-400 font-semibold">Curiosidade lateral</h4>
+          <p>Durante décadas, o trabalho de Turing foi mantido em segredo.</p>
+        </aside>
+      </section>
+
+      <!-- Outras seções organizadas -->
+      <section id="bugs" class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block">Histórias de Bugs</h2>
+
+        <article class="mb-6">
+          <h3 class="text-xl font-semibold mb-1">O Primeiro Bug Real</h3>
+          <p>Uma mariposa encontrada em um computador em 1947.</p>
+          <figure class="italic text-gray-400 text-sm mt-1">
+            <figcaption>Registro do bug colado no relatório técnico.</figcaption>
+          </figure>
+        </article>
+
+        <article>
+          <h3 class="text-xl font-semibold mb-1">O Vírus Creeper</h3>
+          <p>Primeiro vírus da história (1971).</p>
+          <p class="mb-1">Mensagem exibida:</p>
+          <pre
+            class="bg-gray-800 text-green-400 p-3 rounded font-mono overflow-x-auto"
+            >I'M THE CREEPER : CATCH ME IF YOU CAN</pre
+          >
+        </article>
+      </section>
+
+      <section id="internet" class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block">
+          Curiosidades da Internet
+        </h2>
+
+        <article class="mb-4">
+          <h3 class="text-xl font-semibold mb-1">Primeiro Website</h3>
+          <p>Criado em 1991 por Tim Berners-Lee.</p>
+        </article>
+
+        <article class="mb-4">
+          <h3 class="text-xl font-semibold mb-1">ARPANET</h3>
+          <p>A precursora da internet moderna.</p>
+          <ul class="list-disc list-inside">
+            <li>Primeira mensagem enviada: "LO"</li>
+            <li>O sistema caiu antes de completar "LOGIN"</li>
+          </ul>
+        </article>
+
+        <article>
+          <h3 class="text-xl font-semibold mb-1">Emojis e ASCII</h3>
+          <p>Antes dos emojis gráficos, usávamos:</p>
+          <code
+            class="bg-gray-800 text-green-400 px-2 py-1 rounded font-mono mr-2"
+            >:-)</code
+          ><code
+            class="bg-gray-800 text-green-400 px-2 py-1 rounded font-mono mr-2"
+            >;-)</code
+          ><code class="bg-gray-800 text-green-400 px-2 py-1 rounded font-mono">:-D</code>
+        </article>
+      </section>
+
+      <!-- Continue com as outras seções usando estilos similares -->
+      <!-- Linguagens, Linha do Tempo, Formulários etc. -->
+
+      <!-- Exemplo para formulário -->
+      <section
+        id="formulario"
+        class="max-w-lg mx-auto bg-base-100 p-6 rounded-xl shadow-lg border border-gray-700"
+      >
+        <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block">
+          Envie sua Curiosidade
+        </h2>
+
+        <form class="flex flex-col gap-4">
+          <fieldset class="flex flex-col gap-2 border border-gray-600 rounded p-4">
+            <legend class="text-lg font-semibold text-green-400">Informações</legend>
+
+            <label class="flex flex-col">
+              Nome:
+              <input
+                type="text"
+                name="nome"
+                class="input input-bordered input-sm mt-1 text-black"
+                required
+              />
+            </label>
+
+            <label class="flex flex-col">
+              Email:
+              <input
+                type="email"
+                name="email"
+                class="input input-bordered input-sm mt-1 text-black"
+                required
+              />
+            </label>
+
+            <label class="flex flex-col">
+              Categoria:
+              <select
+                name="categoria"
+                class="select select-bordered select-sm mt-1 text-black"
+                required
+              >
+                <option>Pioneiros</option>
+                <option>Bugs</option>
+                <option>Internet</option>
+                <option>Linguagens</option>
+              </select>
+            </label>
+
+            <label class="flex flex-col">
+              Data do fato:
+              <input type="date" name="data" class="input input-bordered input-sm mt-1" />
+            </label>
+
+            <label class="flex flex-col">
+              Sua curiosidade:
+              <textarea
+                name="curiosidade"
+                rows="4"
+                class="textarea textarea-bordered mt-1"
+                required
+              ></textarea>
+            </label>
+
+            <button
+              type="submit"
+              class="btn btn-success btn-sm mt-3 self-start hover:btn-success-focus"
+            >
+              Enviar
+            </button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- Rodapé -->
+  <footer
+    class="footer sm:footer-horizontal bg-neutral text-neutral-content grid grid-cols-1 md:grid-cols-3 p-10 gap-6 text-center md:text-left"
+  >
+    <nav>
+      <p>© 2026 Instituto Internacional de Informações Desnecessárias</p>
+      <address>Email: inutilidades@caosdigital.com</address>
+    </nav>
+
+    <nav>
+      <p>© 2026 Arquivo Confuso da Computação</p>
+      <address>Contato: contato@computacao.com</address>
+    </nav>
+
+    <nav>
+      <p>© 2026 Arquivo Ultra-Secreto da Computação</p>
+      <address>contato@ultrasecreto.dev</address>
+    </nav>
+  </footer>
+
+</body>
+</html>
