@@ -1,10 +1,9 @@
 function mudarGrupos() {
-    // 1. Capturamos as divs originais pelos seus IDs
     const grupoA = document.getElementById('grupo-a');
     const grupoB = document.getElementById('grupo-b');
     const grupoC = document.getElementById('grupo-c');
 
-    // 2. Substituímos o conteúdo HTML interno do Grupo A para o Novo Grupo (Ex: Grupo D)
+
     grupoA.innerHTML = `
         <section>
             <h3><strong>🇩 Grupo D</strong></h3>
@@ -22,7 +21,7 @@ function mudarGrupos() {
         </section>
     `;
 
-    // 3. Substituímos o conteúdo do Grupo B (Ex: Grupo E)
+
     grupoB.innerHTML = `
         <section>
             <h3><strong>🇪 Grupo E</strong></h3>
@@ -40,7 +39,7 @@ function mudarGrupos() {
         </section>
     `;
 
-    // 4. Substituímos o conteúdo do Grupo C (Ex: Grupo F)
+  
     grupoC.innerHTML = `
         <section>
             <h3><strong>🇫 Grupo F</strong></h3>
@@ -58,6 +57,6 @@ function mudarGrupos() {
         </section>
     `;
 
-    // Opcional: Esconder o botão após o clique para o usuário não clicar novamente
+
     document.getElementById('btn-proximo').style.display = 'none';
 }

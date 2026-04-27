@@ -1,10 +1,6 @@
 function add() {
-    // 1. Selecionamos a div que "guarda" os cartões pelo ID dela
     const containerCards = document.getElementById('Cards');
 
-    // 2. Montamos a estrutura do novo cartão exatamente igual à do HTML original
-    // Dica: Adicionei a classe "ms-3" (margin-start) do Bootstrap na primeira linha 
-    // para dar um espacinho e o Paquetá não ficar colado no Vini Jr.!
     const novoCardHTML = `
         <div class="card ms-3" style="width: 22rem;" aria-hidden="true">
             <img src="Lucas_Paqueta.webp" class="card-img-top" alt="Lucas Paquetá">
@@ -23,6 +19,5 @@ function add() {
         </div>
     `;
 
-    // 3. Injetamos o novo cartão "antes do final" (beforeend) da div Cards
     containerCards.insertAdjacentHTML('beforeend', novoCardHTML);
 }

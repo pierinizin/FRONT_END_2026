@@ -11,7 +11,6 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Fundo da página e alinhamento central */
     .bg-copa {
         background-image: url('img/FIFA-World-Cup-26.jpg');
         background-size: cover;
@@ -19,43 +18,43 @@
         background-attachment: fixed;
         min-height: 100vh;
         display: flex;
-        flex-direction: column; /* Coloca o botão embaixo dos cards */
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
         padding: 20px;
     }
 
-    /* O contêiner que segura todos os cartões juntos */
+   
     #Cards {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap; /* Se adicionar muitos, ele joga pra linha de baixo */
+        flex-wrap: wrap; 
         justify-content: center;
-        gap: 30px; /* Esse é o segredo: cria espaço igual entre os cartões */
-        margin-bottom: 40px; /* Espaço entre os cartões e o botão */
+        gap: 30px; 
+        margin-bottom: 40px; 
     }
 
     /* O Cartão do Jogador */
     .card {
         backdrop-filter: blur(8px);
         background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 15px; /* Bordas arredondadas */
+        border-radius: 15px; 
         box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         width: 320px;
-        overflow: hidden; /* Garante que a foto não vaze pelas bordas */
+        overflow: hidden; 
         transition: transform 0.3s ease;
     }
 
     .card:hover {
-        transform: translateY(-10px); /* Efeito massa de levantar o card no mouse */
+        transform: translateY(-10px); 
     }
 
-    /* Imagem do Jogador */
+   
     .card-img-top {
         width: 100%;
-        height: 320px; /* Força todas as imagens a terem a mesma altura */
-        object-fit: cover; /* Corta a imagem bonitinho sem achatar */
-        background-color: #f1f2f6; /* Cor de fundo caso a imagem seja PNG transparente */
+        height: 320px; 
+        object-fit: cover; 
+        background-color: #f1f2f6; 
     }
 
     /* Textos dentro do cartão */
@@ -67,12 +66,12 @@
         font-size: 1.4rem;
         margin: 0 0 15px 0;
         display: flex;
-        justify-content: space-between; /* Joga o nome pra esquerda e o rank pra direita */
+        justify-content: space-between; 
         align-items: center;
         color: #2f3542;
     }
 
-    /* O selinho de nota (Rank) */
+    
     .badge {
         background-color: #3742fa;
         color: white;
@@ -89,7 +88,7 @@
         margin: 0;
     }
 
-    /* Botão Adicionar Novo Jogador */
+    
     .btn-primary {
         background-color: #2ed573;
         color: white;

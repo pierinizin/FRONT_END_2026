@@ -5,7 +5,7 @@ function mostrarTabela() {
     novaImagem.alt = "Tabela de Jogos da Copa do Mundo";
     novaImagem.className = "imagem-tabela";
 
-    // Adiciona ao final do container principal
+
     document.getElementById("conteudo-principal").appendChild(novaImagem);
     
     const btn = document.querySelector(".btn-mostrar");
@@ -14,20 +14,20 @@ function mostrarTabela() {
 }
 
 function revelar() {
-    // 1. Atualiza a foto (id adicionado no HTML para facilitar)
+
     const imagem = document.getElementById("foto-jogador");
     if (imagem) {
         imagem.src = "_vinicius_junior.png";
     }
 
-    // 2. Preenche os dados
+
     document.getElementById("nome-jogador").innerText = "Vinícius José Paixão de Oliveira Júnior";
     document.getElementById("nascimento-jogador").innerText = "12/07/2000 (25 anos)";
     document.getElementById("altura-jogador").innerText = "1,76 m";
     document.getElementById("posicao-jogador").innerText = "Ponta-esquerda / Atacante";
     document.getElementById("rank-jogador").innerText = "9,5";
 
-    // 3. Remove os efeitos de "carregando" (cinza piscando)
+
     const placeholders = document.querySelectorAll(".placeholder");
     placeholders.forEach(el => {
         el.classList.remove("placeholder");
