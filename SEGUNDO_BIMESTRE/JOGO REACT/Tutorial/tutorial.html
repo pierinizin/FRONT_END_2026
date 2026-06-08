@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: Criando um Clone do Termo com React</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #20232a;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #61dafb;
+            background: #20232a;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 4px;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 1.1em;
+        }
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        code {
+            background-color: #e3e3e3;
+            color: #d63384;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        .step {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .note {
+            background-color: #e6f7ff;
+            border-left: 5px solid #1890ff;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Tutorial React: Clone do Termo</h1>
+        <p>Aprenda a construir um jogo clássico de adivinhação de palavras (como o Termo ou Wordle) do zero, entendendo conceitos de Estado (State) e Efeitos (Effects) no React.</p>
+    </div>
+
+    <div class="step">
+        <h2>O que vamos construir?</h2>
+        <p>Neste tutorial, vamos criar um mini web game onde o jogador tem 6 tentativas para adivinhar uma palavra de 5 letras. As regras são simples:</p>
+        <ul>
+            <li>Letra <strong>Verde</strong>: Letra correta no lugar correto.</li>
+            <li>Letra <strong>Amarela</strong>: Letra existe na palavra, mas no lugar errado.</li>
+            <li>Letra <strong>Cinza</strong>: Letra não existe na palavra.</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Passo 1: Setup do Projeto</h2>
+        <p>Começaremos criando a base do nosso projeto React. Abra seu terminal e rode o seguinte comando para criar a estrutura inicial (vamos usar o Create React App ou Vite, aqui exemplificaremos com Vite pela velocidade):</p>
+        <pre><code>npm create vite@latest projeto-termo -- --template react
+cd projeto-termo
+npm install
+npm run dev</code></pre>
+        <div class="note">
+            <strong>Nota:</strong> Este tutorial presume que você já tem o Node.js instalado na sua máquina.
+        </div>
+    </div>
+
+    <div class="step">
+        <h2>Passo 2: Estrutura do Tabuleiro e Estilos</h2>
+        <p>Nosso jogo precisa de uma grade (Grid) de 6 linhas por 5 colunas. Substitua o conteúdo do seu <code>App.css</code> para criarmos os estilos das caixas e as cores de feedback:</p>
+        <pre><code>.board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  margin-top: 50px;
+}
+.row {
+  display: flex;
+  gap: 5px;
+}
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #d3d6da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.correct { background-color: #6aaa64; color: white; border-color: #6aaa64; }
+.present { background-color: #c9b458; color: white; border-color: #c9b458; }
+.absent { background-color: #787c7e; color: white; border-color: #787c7e; }</code></pre>
+    </div>
+
+    <div class="step">
+        <h2>Passo 3: Construindo a Lógica Principal (App.jsx)</h2>
+        <p>No arquivo <code>App.jsx</code>, precisaremos controlar três estados principais:</p>
+        <ol>
+            <li><strong>solution:</strong> A palavra secreta que o jogador precisa adivinhar.</li>
+            <li><strong>guesses:</strong> Um array que guarda o histórico das palavras já tentadas.</li>
+            <li><strong>currentGuess:</strong> A palavra que o jogador está digitando no momento.</li>
+        </ol>
+        <p>Vamos capturar a digitação do usuário usando o hook <code>useEffect</code> escutando o evento de teclado (<code>keydown</code>).</p>
+        
+        <pre><code>import React, { useState, useEffect } from 'react';
+import './App.css';
+
+const SOLUTION = "REACT"; // A palavra secreta
+
+function App() {
+  const [guesses, setGuesses] = useState(Array(6).fill(null));
+  const [currentGuess, setCurrentGuess] = useState('');
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [turn, setTurn] = useState(0);
+
+  useEffect(() => {
+    const handleKeyup = ({ key }) => {
+      if (isGameOver) return;
+
+      if (key === 'Enter') {
+        if (turn > 5 || currentGuess.length !== 5) return;
+        
+        const newGuesses = [...guesses];
+        newGuesses[turn] = currentGuess;
+        setGuesses(newGuesses);
+        setTurn(turn + 1);
+        
+        if (currentGuess.toUpperCase() === SOLUTION) {
+          setIsGameOver(true);
+          alert('Você venceu!');
+        } else if (turn === 5) {
+          setIsGameOver(true);
+          alert('Fim de jogo! A palavra era: ' + SOLUTION);
+        }
+        setCurrentGuess('');
+      }
+      
+      if (key === 'Backspace') {
+        setCurrentGuess(prev => prev.slice(0, -1));
+        return;
+      }
+
+      if (/^[A-Za-z]$/.test(key) && currentGuess.length < 5) {
+        setCurrentGuess(prev => prev + key.toUpperCase());
+      }
+    };
+
+    window.addEventListener('keyup', handleKeyup);
+    return () => window.removeEventListener('keyup', handleKeyup);
+  }, [currentGuess, isGameOver, turn, guesses]);
+
+  // Função para checar cor das letras
+  const getLetterClass = (letter, index) => {
+    if (!letter) return '';
+    if (SOLUTION[index] === letter) return 'correct';
+    if (SOLUTION.includes(letter)) return 'present';
+    return 'absent';
+  };
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1 style={{textAlign: 'center'}}&gt;Termo Clone&lt;/h1&gt;
+      &lt;div className="board"&gt;
+        {guesses.map((guess, i) => {
+          const isCurrentTurn = i === turn;
+          const word = isCurrentTurn ? currentGuess.padEnd(5, ' ') : (guess || '     ');
+          
+          return (
+            &lt;div key={i} className="row"&gt;
+              {word.split('').map((letter, j) => (
+                &lt;div key={j} className={`cell ${!isCurrentTurn && guess ? getLetterClass(letter, j) : ''}`}&gt;
+                  {letter.trim()}
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+          );
+        })}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;</code></pre>
+    </div>
+
+    <div class="step">
+        <h2>Resumo do que aprendemos</h2>
+        <p>Assim como no Jogo da Velha (Tic-Tac-Toe), dividimos a nossa interface em uma grade. Porém, em vez de passar um turno entre 'X' e 'O', nosso estado controla as <strong>tentativas (guesses)</strong> e re-renderiza a tela condicionalmente atribuindo classes CSS (<code>correct</code>, <code>present</code>, <code>absent</code>) com base na comparação entre a tentativa do usuário e a solução.</p>
+        <p><strong>Desafio Extra:</strong> Tente componentizar a linha (Row) e a célula (Cell) em arquivos separados e adicionar um teclado virtual na tela!</p>
+    </div>
+
+</body>
+</html>
